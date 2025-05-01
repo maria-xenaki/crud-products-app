@@ -1,13 +1,29 @@
 # CRUD Product App (Node.js + MongoDB)
 
 This is a simple backend CRUD application for managing products, built using 
-**Node.js**, **Express** and **MongoDB**.
-
+**Node.js**, **Express** and **MongoDB**  — now fully containerized with **Docker**.
 
 # Features
 
 - Create a product (POST)
 - Get all products (GET)
-- Get a single product by ID (GET /:id)
-- Update a product (PATCH)
-- Delete a product (DELETE)
+- Get a single product by ID (GET /:id) (In progress)
+- Update a product (PATCH)              (In progress)
+- Delete a product (DELETE)             (In progress)
+- Fully dockerized setup
+- Unit and integration testing using **Jest**
+
+## Running with Docker
+
+# Prerequisites
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed
+- [Docker Compose](https://docs.docker.com/compose/) (already included in Docker Desktop)
+
+# Setting up the environment
+
+Before running the app, you need to set up the `.env` file in the root directory of the project. It should contain the following variables:
+
+```plaintext
+MONGODB_URI=mongodb://mongo:27017/crud-app
+MONGODB_URI_TEST=mongodb://mongo:27017/crud-app-test
