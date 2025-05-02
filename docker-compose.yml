@@ -1,5 +1,5 @@
 services:
-  mongo:
+  crud-app-mongo:
     image: mongo
     container_name: crud-app-mongo
     ports:
@@ -7,19 +7,19 @@ services:
     volumes:
       - mongo-data:/data/db
 
-  app:
+  node-products-app:
     build: .
     container_name: node-products-app
     ports:
       - "3000:3000"
     environment:
-      - MONGODB_URI=mongodb://mongo:27017/crud-app
+      - MONGODB_URI=mongodb://crud-app-mongo:27017/crud-app
       - NODE_ENV=development
     depends_on:
-      - mongo
-    volumes: 
+      - crud-app-mongo
+    volumes:
       - .:/usr/src/app
     command: npm start
-
+   
 volumes:
   mongo-data:

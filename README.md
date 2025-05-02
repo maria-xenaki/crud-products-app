@@ -13,13 +13,6 @@ This is a simple backend CRUD application for managing products, built using
 - Fully dockerized setup
 - Unit and integration testing using **Jest**
 
-## Running with Docker
-
-# Prerequisites
-
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed
-- [Docker Compose](https://docs.docker.com/compose/) (already included in Docker Desktop)
-
 # Setting up the environment
 
 Before running the app, you need to set up the `.env` file in the root directory of the project. It should contain the following variables:
@@ -27,3 +20,29 @@ Before running the app, you need to set up the `.env` file in the root directory
 ```plaintext
 MONGODB_URI=mongodb://mongo:27017/crud-app
 MONGODB_URI_TEST=mongodb://mongo:27017/crud-app-test
+```
+
+## Running with Docker
+
+# Prerequisites
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed
+- [Docker Compose](https://docs.docker.com/compose/) (already included in Docker Desktop)
+
+# Start the app
+
+```bash
+docker-compose up-d
+```
+# Running tests
+
+```bash
+docker exec -it node-products-app sh
+npm test
+```
+
+# Terminating app
+
+```bash
+docker-compose down -v
+```
